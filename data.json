@@ -1,0 +1,65 @@
+{
+  "branches": 
+  [
+    {"CSE": 
+      {
+        "link": "www.google.co.in", 
+        "syllabus": "link2"
+      }
+    }, 
+    {
+      
+    }
+  ],
+  "faculty": 
+  [
+    {
+      "name": "Prof. Geraldine Bessie Amali",
+      "role": "Assistant Professor",
+      "department": "Computational Intelligence",
+      "school": "SCOPE",
+      "areas": {
+        "artificial neural networks": true,
+        "optimization agorithms": true,
+        "reinforcement learning": true,
+        "supervised learning": true
+      }
+    }, 
+    {
+      "name": "Prof. Parveen Sultana H",
+      "role": "Associate Professor",
+      "department": "Software Systems",
+      "school": "SCOPE",
+      "areas": {
+        "mobile computing": true,
+        "iot": true,
+        "reinforcement learning": true
+      }
+    },
+    {
+      "name": "Prof. Anthoniraj",
+      "role": "Associate Professor",
+      "department": "Software Systems",
+      "school": "SCOPE",
+      "areas": {
+        "internet programming": true,
+        "data mining": true,
+        "machine learning": true,
+        "semantic web": true
+      }
+    }
+  ],
+  "organization": 
+  {
+    "chancellor": "Dr. G Viswanathan",
+    "vice-president": "Mr. G V Selvam",
+    "vice-chancellor": "Dr. Anand A Samuel",
+    "pro-vice-chancellor": "Dr. S Narayanan",
+    "dean": 
+    {
+      "SITE": "Dr. Aswani Kumar Cherukuri",
+      "SCOPE": "Dr. Saravanan R",
+      "academics": "Dr. Jayaraman G"
+    }
+  }
+}
