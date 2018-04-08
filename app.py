@@ -1,42 +1,31 @@
-from urllib.parse import urlparse, urlencode
-from urllib.request import urlopen, Request
-from urllib.error import HTTPError
+import urllib, json, os, sys
+from flask import Flask, request, make_response
 
-import json
-import os
-
-from flask import Flask
-from flask import request
-from flask import make_response
-
-# Flask app should start in global layout
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def verify():
-    #Webhook verification
-    return "Project verified", 200
+        #Webhook verification
+        return "Project verified", 200
 
 @app.route('/webhook', methods=['GET'])
 def verifyweb():
-    return "Webhook verified", 200
-
+        #Webhook verification
+        return "Webhook verified", 200
+        
 @app.route('/webhook', methods=['POST'])
-def webhook():
-    print("********")
-    req = request.get_json(silent=True, force=True)
-
-    print("Request:")
-    print(json.dumps(req, indent=4))
-
-    res = processRequest(req)
-
-    res = json.dumps(res, indent=4)
-    # print(res)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
-
+def webhook():        
+        print("********")
+        print("((((")
+        req = request.get_json()
+        print("Request: ")
+        print(json.dumps(req, indent = 4))
+        res = makeWebhookResult(req)
+        res = json.dumps(res, indent= 4)
+        print(res)
+        r = make_response(res)
+        r.headers['Content-Type'] = 'application/json'
+        return r
 
 def processRequest(req):
     if req.get("result").get("action") != "findBranchLink":
@@ -121,40 +110,12 @@ def makeWebhookResult(data):
 
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 80))
+        port = int(os.getenv('PORT', 80))
+        print ("Starting on port %d" %(port))
+        app.run(debug = True, port = port)
 
-    print("Starting app on port %d" % port)
-
-    app.run(debug=False, port=port, host='0.0.0.0')
 '''
-import urllib, json, os, sys
-from flask import Flask, request, make_response
 
-app = Flask(__name__)
-
-@app.route('/', methods=['GET'])
-def verify():
-        #Webhook verification
-        return "Project verified", 200
-
-@app.route('/webhook', methods=['GET'])
-def verifyweb():
-        #Webhook verification
-        return "Webhook verified", 200
-        
-@app.route('/webhook', methods=['POST'])
-def webhook():        
-        print("********")
-        print("((((")
-        req = request.get_json()
-        print("Request: ")
-        print(json.dumps(req, indent = 4))
-        res = makeWebhookResult(req)
-        res = json.dumps(res, indent= 4)
-        print(res)
-        r = make_response(res)
-        r.headers['Content-Type'] = 'application/json'
-        return r
 
 def makeWebhookResult(req):
         if req.get("result").get("action") != "findBranchLink":
@@ -175,10 +136,6 @@ def makeWebhookResult(req):
                 "source": "Heere"
                 }
 
-if __name__ == '__main__':
-        port = int(os.getenv('PORT', 80))
-        print ("Starting on port %d" %(port))
-        app.run(debug = True, port = port)
         
         '''
 
