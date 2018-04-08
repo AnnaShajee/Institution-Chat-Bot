@@ -18,7 +18,7 @@ def verify():
 def webhook():        
         print("********")
         print("((((")
-        req = request.get_json((silent=True, force=True))
+        req = request.get_json(silent=True, force=True)
         print("Request: ")
         print(json.dumps(req, indent = 4))
         res = makeWebhookResult(req)
