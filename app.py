@@ -18,7 +18,7 @@ def verify():
 def webhook():        
         print("********")
         print("((((")
-        req = request.get_json(silent=True, force=True)
+        req = request.get_json()
         print("Request: ")
         print(json.dumps(req, indent = 4))
         res = makeWebhookResult(req)
@@ -50,5 +50,5 @@ def makeWebhookResult(req):
 if __name__ == '__main__':
         port = int(os.getenv('PORT', 80))
         print ("Starting on port %d" %(port))
-        app.run(debug = True, port = port, host='0.0.0.0')
+        app.run(debug = True, port = port)
 
