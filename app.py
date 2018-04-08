@@ -1,6 +1,5 @@
 import urllib, json, os, sys
 from flask import Flask, request, make_response
-import requests
 
 app = Flask(__name__)
 
