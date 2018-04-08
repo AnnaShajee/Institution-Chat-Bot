@@ -46,6 +46,31 @@ def processRequest(req):
         "source": "Heere"
         }
 
+def makeWebhookResult(req):
+        if req.get("result").get("action") != "findBranchLink":
+                return()
+        result = req.get("result")
+        print("A1")
+        parameters = result.get("parameters")
+        print(parameters)
+        branch = parameters.get("branch")
+        print(branch)
+        link = {'CSE': 'www.google.co.in'}
+        speech = ("The link is " + str(link[branch]))
+        print("Response:")
+        print(speech)
+        return {
+                "speech": speech,
+                "displayText": speech,
+                "source": "Heere"
+                }
+
+if __name__ == '__main__':
+        port = int(os.getenv('PORT', 80))
+        print ("Starting on port %d" %(port))
+        app.run(debug = False, port = port, host = '0.0.0.0')
+        
+        
     
     '''baseurl = "https://query.yahooapis.com/v1/public/yql?"
     yql_query = makeYqlQuery(req)
@@ -106,36 +131,3 @@ def makeWebhookResult(data):
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }'''
-    
-
-
-if __name__ == '__main__':
-        port = int(os.getenv('PORT', 80))
-        print ("Starting on port %d" %(port))
-        app.run(debug = False, port = port, host = '0.0.0.0')
-
-'''
-
-
-def makeWebhookResult(req):
-        if req.get("result").get("action") != "findBranchLink":
-                return()
-        result = req.get("result")
-        print("A1")
-        parameters = result.get("parameters")
-        print(parameters)
-        branch = parameters.get("branch")
-        print(branch)
-        link = {'CSE': 'www.google.co.in'}
-        speech = ("The link is " + str(link[branch]))
-        print("Response:")
-        print(speech)
-        return {
-                "speech": speech,
-                "displayText": speech,
-                "source": "Heere"
-                }
-
-        
-        '''
-
