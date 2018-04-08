@@ -9,7 +9,7 @@ def verify():
         return "Project verified", 200
 
 @app.route('/webhook', methods=['GET'])
-def verify():
+def verifyweb():
         #Webhook verification
         return "Webhook verified", 200
         
