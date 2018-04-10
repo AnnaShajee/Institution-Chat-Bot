@@ -74,10 +74,16 @@ def findBranchLink(req):
         "source": "Heere",
         "messages": [
         {
+        "displayText": speech,
+        "platform": "google",
+        "textToSpeech": "Audio response",
+        "type": "simple_response"
+        },
+        {
         "buttons": [
         {
         "openUrlAction": {
-        "url": "https://linkUrl.com"
+        "url": link
         },
         "title": "AoG Card Link title"
         }
