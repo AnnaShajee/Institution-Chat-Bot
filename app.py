@@ -58,8 +58,8 @@ def findBranchLink(req):
 		if "CSE" == branches[i]['branch']:
 			index = i
 			break
-	print i
-	print index
+	print (i)
+	print (index)
 	if index != -1:
 		link = data['branches'][index]['link']
 		speech = ("This branch is available. \n Read more at %s" %(link))
