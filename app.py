@@ -46,31 +46,30 @@ def makeWebhookResult(req):
 
 def findBranchLink(req):
 	result = req.get("result")
-        print (result)
-        parameters = result.get("parameters")
-        print(parameters)
-        branch = parameters.get("branch")
-        print(branch)
-        link = {'CSE': 'www.google.co.in'}
-        data = json.load(open('data.json'))
-        branches = data['branches']
-        print (branches)
-        for i in range(len(branches)):
-        	if "CSE" == branches[i]['branch']:
-        		index = i
-        		break
-        print i
-        print index
-        if index != -1:
-        	link = data['branches'][index]['link']
-        	speech = ("This branch is available. \n Read more at %s" %(link))
-        print("Response:")
-        print(speech)
-        return {
-                "speech": speech,
-                "displayText": speech,
-                "source": "Heere"
-                }
+	print (result)
+	parameters = result.get("parameters")
+	print(parameters)
+	branch = parameters.get("branch")
+	print(branch)
+	data = json.load(open('data.json'))
+	branches = data['branches']
+	print (branches)
+	for i in range(len(branches)):
+		if "CSE" == branches[i]['branch']:
+			index = i
+			break
+	print i
+	print index
+	if index != -1:
+		link = data['branches'][index]['link']
+		speech = ("This branch is available. \n Read more at %s" %(link))
+	print("Response:")
+	print(speech)
+	return {
+		"speech": speech,
+		"displayText": speech,
+		"source": "Heere"
+		}
 
 if __name__ == '__main__':
         port = int(os.getenv('PORT', 80))
