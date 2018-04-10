@@ -1,11 +1,19 @@
-import urllib, json, os, sys
-from flask import Flask, request, make_response
+import urllib
+import json 
 
+import os
+import sys
+
+from flask import Flask
+from flask import request
+from flask import make_response
+
+#Starting the app in a global context
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def verify():
-        #Webhook verification
+def verifylink():
+        #Link verification
         return "Project verified", 200
 
 @app.route('/webhook', methods=['GET'])
@@ -16,47 +24,46 @@ def verifyweb():
 @app.route('/webhook', methods=['POST'])
 def webhook():        
         print("********")
-        print("((((")
         req = request.get_json()
         print("Request: ")
         print(json.dumps(req, indent = 4))
         res = makeWebhookResult(req)
         res = json.dumps(res, indent= 4)
+        print "Result:"
         print(res)
         r = make_response(res)
         r.headers['Content-Type'] = 'application/json'
         return r
 
-def processRequest(req):
-    if req.get("result").get("action") != "findBranchLink":
-        return {}
-    result = req.get("result")
-    print("A1")
-    parameters = result.get("parameters")
-    print(parameters)
-    branch = parameters.get("branch")
-    print(branch)
-    link = {'CSE': 'www.google.co.in'}
-    speech = ("The link is " + str(link[branch]))
-    print("Response:")
-    print(speech)
-    return {
-        "speech": speech,
-        "displayText": speech,
-        "source": "Heere"
-        }
-
 def makeWebhookResult(req):
-        if req.get("result").get("action") != "findBranchLink":
-                return()
-        result = req.get("result")
-        print("A1")
+    if req.get("result").get("action") == "findBranchLink":
+        result = findBranchLink(req)
+    if req.get("result").get("action") == "findGuide":
+    	result = findGuide(req)
+    else:
+    	result = {}
+    return result
+
+def findBranchLink(req):
+	    result = req.get("result")
+        print result
         parameters = result.get("parameters")
         print(parameters)
         branch = parameters.get("branch")
         print(branch)
         link = {'CSE': 'www.google.co.in'}
-        speech = ("The link is " + str(link[branch]))
+        data = json.load(open('data.json'))
+        branches = data['branches']
+        print branches
+        for i in range(len(branches)):
+        	if "CSE" == bb[i]['branch']:
+        		index = i
+        		break
+        print i
+        print index
+        if index != -1:
+        	link = data['branches'][index]['link']
+        	speech = ("This branch is available. \n Read more at %s" %(link))
         print("Response:")
         print(speech)
         return {
@@ -67,7 +74,7 @@ def makeWebhookResult(req):
 
 if __name__ == '__main__':
         port = int(os.getenv('PORT', 80))
-        print ("Starting on port %d" %(port))
+        print ("Starting on port %d" % port)
         app.run(debug = False, port = port, host = '0.0.0.0')
         
         
@@ -132,4 +139,22 @@ def makeWebhookResult(data):
         # "data": data,
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
+        
+
+
+    result = req.get("result")
+    print("A1")
+    parameters = result.get("parameters")
+    print(parameters)
+    branch = parameters.get("branch")
+    print(branch)
+    link = {'CSE': 'www.google.co.in'}
+    speech = ("The link is " + str(link[branch]))
+    print("Response:")
+    print(speech)
+    return {
+        "speech": speech,
+        "displayText": speech,
+        "source": "Heere"
+        }
     }'''
