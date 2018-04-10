@@ -1,65 +1,65 @@
 {
-  "branches": 
-  [
-    {"CSE": 
-      {
-        "link": "www.google.co.in", 
-        "syllabus": "link2"
-      }
-    }, 
+  "branches": [
     {
-      
+      "branch": "CSE",
+      "link": "http://www.vit.ac.in/academics/schools/scope/courses",
+      "syllabus": "http://www.vit.ac.in/files/BTechCSE_curriculum.pdf"
+    },
+    {
+      "branch": "CSE",
+      "link": "http://www.vit.ac.in/academics/schools/site/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SITE/Courses/BTech_IT_curriculum.pdf"
     }
   ],
-  "faculty": 
-  [
+  "faculty": [
     {
       "name": "Prof. Geraldine Bessie Amali",
       "role": "Assistant Professor",
       "department": "Computational Intelligence",
       "school": "SCOPE",
-      "areas": {
-        "artificial neural networks": true,
-        "optimization agorithms": true,
-        "reinforcement learning": true,
-        "supervised learning": true
-      }
-    }, 
+      "areas": [
+        "artificial neural networks",
+        "optimization agorithms",
+        "reinforcement learning",
+        "supervised learning"
+      ]
+    },
     {
       "name": "Prof. Parveen Sultana H",
       "role": "Associate Professor",
       "department": "Software Systems",
       "school": "SCOPE",
-      "areas": {
-        "mobile computing": true,
-        "iot": true,
-        "reinforcement learning": true
-      }
+      "areas": [
+        "mobile computing",
+        "iot",
+        "reinforcement learning"
+      ]
     },
     {
       "name": "Prof. Anthoniraj",
       "role": "Associate Professor",
       "department": "Software Systems",
       "school": "SCOPE",
-      "areas": {
-        "internet programming": true,
-        "data mining": true,
-        "machine learning": true,
-        "semantic web": true
-      }
+      "areas": [
+        "internet programming",
+        "data mining",
+        "machine learning",
+        "semantic web"
+      ]
     }
   ],
-  "organization": 
-  {
+  "organization": {
     "chancellor": "Dr. G Viswanathan",
     "vice-president": "Mr. G V Selvam",
     "vice-chancellor": "Dr. Anand A Samuel",
     "pro-vice-chancellor": "Dr. S Narayanan",
-    "dean": 
-    {
+    "dean": {
       "SITE": "Dr. Aswani Kumar Cherukuri",
       "SCOPE": "Dr. Saravanan R",
       "academics": "Dr. Jayaraman G"
     }
+  },
+  "contact": {
+    
   }
 }
