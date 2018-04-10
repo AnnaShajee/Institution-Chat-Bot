@@ -28,9 +28,10 @@ def webhook():
         print("Request: ")
         print(json.dumps(req, indent = 4))
         res = makeWebhookResult(req)
-        res = json.dumps(res, indent= 4)
+        ret = json.dumps(res, indent= 4)
         print("Result:")
         print(res)
+	print(ret)
         r = make_response(res)
         r.headers['Content-Type'] = 'application/json'
         return r
@@ -38,10 +39,12 @@ def webhook():
 def makeWebhookResult(req):
     if req.get("result").get("action") == "findBranchLink":
         result = findBranchLink(req)
-    if req.get("result").get("action") == "findGuide":
+	print(result)
+    elif req.get("result").get("action") == "findGuide":
     	result = findGuide(req)
     else:
     	result = {}
+    print (result)
     return result
 
 def findBranchLink(req):
