@@ -65,13 +65,33 @@ def findBranchLink(req):
     print (index)
     if index != -1:
         link = data['branches'][index]['link']
-        speech = ("This branch is available. \n Read more at %s" %(link))
+        speech = ("This branch is available. Read more at %s" %(link))
     print("Response:")
     print(speech)
     return {
         "speech": speech,
         "displayText": speech,
         "source": "Heere"
+                "messages": [
+        {
+        "buttons": [
+        {
+        "openUrlAction": {
+        "url": "https://linkUrl.com"
+        },
+        "title": "AoG Card Link title"
+        }
+        ],
+        "formattedText": "AoG Card Description",
+        "image": {
+        "url": "http://imageUrl.com"
+        },
+        "platform": "google",
+        "subtitle": "AoG Card Subtitle",
+        "title": "AoG Card Title",
+        "type": "basic_card"
+        }
+        ] 
         }
 
 if __name__ == '__main__':
