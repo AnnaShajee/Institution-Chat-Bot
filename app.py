@@ -38,13 +38,13 @@ def webhook():
 
 def makeWebhookResult(req):
     if req.get("result").get("action") == "findBranchLink":
-        result = findBranchLink(req)
+	result = findBranchLink(req)
 	print(result)
     elif req.get("result").get("action") == "findGuide":
     	result = findGuide(req)
     else:
     	result = {}
-    print (result)
+    print(result)
     return result
 
 def findBranchLink(req):
