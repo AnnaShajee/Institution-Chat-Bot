@@ -32,7 +32,7 @@ def webhook():
     print("Result:")
     print(res)
     print(ret)
-    r = make_response(res)
+    r = make_response(ret)
     r.headers['Content-Type'] = 'application/json'
     return r
 
