@@ -29,7 +29,7 @@ def webhook():
         print(json.dumps(req, indent = 4))
         res = makeWebhookResult(req)
         res = json.dumps(res, indent= 4)
-        print "Result:"
+        print ("Result:")
         print(res)
         r = make_response(res)
         r.headers['Content-Type'] = 'application/json'
@@ -46,7 +46,7 @@ def makeWebhookResult(req):
 
 def findBranchLink(req):
 	    result = req.get("result")
-        print result
+        print (result)
         parameters = result.get("parameters")
         print(parameters)
         branch = parameters.get("branch")
@@ -54,7 +54,7 @@ def findBranchLink(req):
         link = {'CSE': 'www.google.co.in'}
         data = json.load(open('data.json'))
         branches = data['branches']
-        print branches
+        print (branches)
         for i in range(len(branches)):
         	if "CSE" == bb[i]['branch']:
         		index = i
