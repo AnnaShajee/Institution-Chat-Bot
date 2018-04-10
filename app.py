@@ -72,7 +72,7 @@ def findBranchLink(req):
         "speech": speech,
         "displayText": speech,
         "source": "Heere"
-                "messages": [
+        "messages": [
         {
         "buttons": [
         {
