@@ -437,8 +437,9 @@ def contactOffice(req):
         address = contact[office]['address']
         print(address)
         phone = contact[office]['number']
-        print(number)
-        speech1 = ("%s is located at %s. Contact them at: %s" %(name, address, number))
+        speech1 = ("%s is located at %s. Contact them at: " %(name, address))
+        for index in range(len(phone)):
+            speech1 += "%s " %(phone[index])
         print(speech1)
         speech2 = ("Find %s details at %s. " %(name, link))
         print(speech2)
