@@ -355,7 +355,7 @@ def findGuide(req):
     print (faculty)
     flag = "false"
     for index in range(len(faculty)):
-        area = faculty[index]
+        area = faculty[index]['areas']
         for num in range(len(area)):
             if area[num] == interest:
                 flag = "true"
