@@ -2,11 +2,15 @@
   "branches": [
     {
       "branch": "CSE",
+      "name": "Computer Science and Engineering",
+      "school": "SCOPE",
       "link": "http://www.vit.ac.in/academics/schools/scope/courses",
       "syllabus": "http://www.vit.ac.in/files/BTechCSE_curriculum.pdf"
     },
     {
       "branch": "CSE",
+      "name": "Computer Science and Engineering",
+      "school": "SCOPE",
       "link": "http://www.vit.ac.in/academics/schools/site/courses",
       "syllabus": "http://www.vit.ac.in/files/academics/schools/SITE/Courses/BTech_IT_curriculum.pdf"
     }
