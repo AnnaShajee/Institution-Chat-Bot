@@ -66,7 +66,7 @@ def findBranchLink(req):
     print (branches)
     flag = "false"
     for index in range(len(branches)):
-        if branch == branches[i]['branch']:
+        if branch == branches[index]['branch']:
             flag = "true"
             break
     print (index)
