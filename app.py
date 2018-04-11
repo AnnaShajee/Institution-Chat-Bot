@@ -32,7 +32,6 @@ def webhook():
     res = makeWebhookResult(req)
     ret = json.dumps(res, indent= 4)
     print("Result:")
-    print(res)
     print(ret)
     r = make_response(ret)
     r.headers['Content-Type'] = 'application/json'
@@ -40,10 +39,10 @@ def webhook():
   
 def makeWebhookResult(req):
     action = req.get("result").get("action")
+    print(action)
     if action == "findBranchLink":
         print("A")
         result = findBranchLink(req)
-        print(result)
     elif action == "findGuide":
         result = findGuide(req)
     elif action == "findSyllabus":
