@@ -1,5 +1,7 @@
+import json
 
 def findBranchLink(req):
+    print("B")
     result = req.get("result")
     print (result)
     parameters = result.get("parameters")
