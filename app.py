@@ -38,6 +38,25 @@ def webhook():
     r.headers['Content-Type'] = 'application/json'
     return r
 
+def makeWebhookResult(req):
+    action = req.get("result").get("action")
+    if action == "findBranchLink":
+        print("A")
+        result = findBranchLink(req)
+        print(result)
+    elif action == "findGuide":
+        result = findGuide(req)
+    elif action == "findSyllabus":
+        result = findSyllabus(req)
+    elif action == "contactOffice":
+        result = contactOffice(req)
+    elif action == "admissionQuery":
+        result = admissionQuery(req)
+    else:
+        result = default()
+    print(result)
+    return result
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 80))
     print ("Starting on port %d" % port)
