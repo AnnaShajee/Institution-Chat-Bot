@@ -63,10 +63,13 @@ def findBranchLink(req):
     data = json.load(open('data.json'))
     branches = data['branches']
     print (branches)
+    flag = "false"
     for i in range(len(branches)):
         if branch == branches[i]['branch']:
             flag = "true"
             break
+    print (i)
+    print(flag)
     if flag == "true":
         link = data['branches'][index]['link']
         name = data['branches'][index]['name']
