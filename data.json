@@ -89,6 +89,8 @@
     {
       "name": "Prof. Geraldine Bessie Amali",
       "role": "Assistant Professor",
+      "link": "http://vit.ac.in/academics/schools/scope/faculty",
+      "image": "http://vit.ac.in/img/faculty/14055.jpg",
       "department": "Computational Intelligence",
       "school": "SCOPE",
       "areas": [
@@ -101,6 +103,8 @@
     {
       "name": "Prof. Parveen Sultana H",
       "role": "Associate Professor",
+      "link": "http://vit.ac.in/academics/schools/scope/faculty",
+      "image": "http://vit.ac.in/img/faculty/10435.jpg",
       "department": "Software Systems",
       "school": "SCOPE",
       "areas": [
@@ -112,6 +116,8 @@
     {
       "name": "Prof. Anthoniraj",
       "role": "Associate Professor",
+      "link": "http://vit.ac.in/academics/schools/scope/faculty",
+      "image": "http://vit.ac.in/img/faculty/10941.jpg",
       "department": "Software Systems",
       "school": "SCOPE",
       "areas": [
@@ -123,14 +129,73 @@
     }
   ],
   "organization": {
-    "chancellor": "Dr. G Viswanathan",
-    "vice president": "Mr. G V Selvam",
-    "vice chancellor": "Dr. Anand A Samuel",
-    "pro vice chancellor": "Dr. S Narayanan",
+    "chancellor": {
+      "name": "Dr. G Viswanathan",
+      "link": "http://vit.ac.in/about/leadership",
+      "image": "http://vit.ac.in/images/Leadership/gv.jpg",
+      "role": "Chancellor"
+    },
+    "vice president": {
+      "name": "Mr. G V Selvam",
+      "link": "http://vit.ac.in/about/leadership",
+      "image": "http://vit.ac.in/images/Leadership/vpc_small.jpg",
+      "role": "Vice- President"
+    },
+    "vice chancellor": {
+      "name": "Dr. Anand A Samuel",
+      "link": "http://vit.ac.in/about/leadership",
+      "image": "http://vit.ac.in/images/Leadership/Anand%20A.%20Samuel.jpg",
+      "role": "Vice- Chancellor"
+    },
+    "pro vice chancellor": {
+      "name": "Dr. S Narayanan",
+      "link": "http://vit.ac.in/about/leadership",
+      "image": "http://vit.ac.in/images/Leadership/provc.jpg",
+      "role": "Pro- Vice- Chancellor"
+    },
     "dean": {
-      "site": "Dr. Aswani Kumar Cherukuri",
-      "scope": "Dr. Saravanan R",
-      "academics": "Dr. Jayaraman G"
+      "site": {
+        "name": "Dr. Aswani Kumar Cherukuri",
+        "school": "SITE",
+        "link": "http://vit.ac.in/academics/schools/site/faculty",
+        "image": "http://vit.ac.in/img/faculty/10288.jpg"
+      },
+      "scope": {
+        "name": "Dr. Saravanan R",
+        "school": "SCOPE",
+        "link": "http://vit.ac.in/academics/schools/scope/faculty",
+        "image": "http://vit.ac.in/img/faculty/10230.jpg"
+      },
+      "smec": {
+        "school": "SMEC",
+        "name": "Prof. Arivazhagan N",
+        "link": "http://vit.ac.in/academics/schools/smec/faculty",
+        "image": "http://vit.ac.in/img/faculty/11234.jpg"
+      },
+      "select": {
+        "name": "Dr. Arulmozhivarman P",
+        "school": "SELECT",
+        "link": "http://vit.ac.in/academics/schools/select/faculty",
+        "image": "http://vit.ac.in/img/faculty/10680.jpg"
+      },
+      "sense": {
+        "name": "Dr. Elizabeth Rufus",
+        "school": "SENSE",
+        "link": "http://vit.ac.in/academics/schools/sense/faculty",
+        "image": "http://vit.ac.in/img/faculty/10117.jpg"
+      },
+      "scale": {
+        "name": "Prof. Sekar S K",
+        "school": "SCALE",
+        "link": "http://vit.ac.in/academics/schools/scale/faculty",
+        "image": "http://vit.ac.in/img/faculty/10138.jpg"
+      },
+      "academics": {
+        "name": "Dr. Jayaraman G",
+        "school": "Academics",
+        "link": "",
+        "image": ""
+      }
     },
     "hod": {
       "analytics": "Prof. Lakshmanan K",
@@ -141,18 +206,21 @@
   },
   "contact": {
     "academics": {
+      "name": "Academics Office",
       "address": "201 & 202 A. L. Mudhaliar Block, VIT, Vellore",
       "number": [
         "+(91) 416 220 2011"
       ]
     },
     "welfare": {
+      "name": "Student Welfare Office",
       "address": "108, First Floor Dr. MGR block, VIT, Vellore",
       "number": [
         "+(91) 416 220 2200"
       ]
     },
     "admission": {
+      "name": "Admissions Office",
       "address": "G-09, Ground Floor, Dr. MGR block, VIT, Vellore",
       "number": [
         "+(91) 416 220 2157",
@@ -161,6 +229,7 @@
       ]
     },
     "international": {
+      "name": "International Relations Office",
       "address": "109, First Floor, Dr. MGR block, VIT, Vellore",
       "number": [
         "+(91) 416 220 2131",
@@ -168,18 +237,21 @@
       ]
     },
     "counselling": {
+      "name": "Counselling Office",
       "address": "720, 7th Floor, Technology Tower, VIT, Vellore",
       "number": [
         "+(91) 416 220 2011"
       ]
     },
     "placement": {
+      "name": "Placement Office",
       "address": "201 & 202 A. L. Mudhaliar Block, VIT, Vellore",
       "number": [
         "+(91) 416 220 2011"
       ]
     },
     "records": {
+      "name": "Student Records Office",
       "address": "G-14; Dr. MGR Block, VIT, Vellore",
       "number": [
         "+(91) 416 220 2012"
