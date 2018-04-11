@@ -65,9 +65,9 @@ def findBranchLink(req):
     print (branches)
     for i in range(len(branches)):
         if branch == branches[i]['branch']:
-            flag = true
+            flag = "true"
             break
-    if flag == true:
+    if flag == "true":
         link = data['branches'][index]['link']
         name = data['branches'][index]['name']
         school = data['branches'][index]['school']
