@@ -52,6 +52,8 @@ def makeWebhookResult(req):
         result = contactOffice(req)
     elif action == "admissionQuery":
         result = admissionQuery(req)
+    elif action == "findLeader":
+        result = findLeader(req)
     else:
         result = default()
     print(result)
@@ -469,7 +471,7 @@ def contactOffice(req):
             "url": image,
             "accessibilityText": "%s" %(name)
             },
-            "formattedText": speech1,
+            "formattedText": "Here are the %s details." %(name),
             "platform": "google",
             "subtitle": "Contact Information",
             "title": name,
@@ -478,8 +480,99 @@ def contactOffice(req):
             ] 
             }
     else: 
-        speech1 = ("I'm sorry, that doesn't associate to an office at VIT, Vellore. ")
+        speech1 = ("I'm sorry, that isn't associated to an office at VIT, Vellore. ")
         speech2 = ("Find our offices at %s" %(link))
+        speech = speech1 + speech2
+        print(speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+eifjccg            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find our offices here."
+            }
+            ],
+            "image": {
+            "url": image,
+            "accessibilityText": "Offices at VIT"
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "title": "Office not found",
+            "type": "basic_card"
+            }
+            ] 
+            }
+
+def findLeader(req): 
+    print("G")
+    result = req.get("result")
+    print (result)
+    parameters = result.get("parameters")
+    print(parameters)
+    role = parameters.get("roles")
+    print(roles)
+    data = json.load(open('data.json'))
+    flag = "false"
+    if data['organization'].get(role) is not None:
+        flag = "true"
+    print(flag)
+    link = data['organization']['link']
+    if flag == "true":
+        name = data['organization'][role]['name']
+        image = data['organization'][role]['image']
+        position = data['organization'][role]['role']
+        speech1 = ("The %s is %s. " %(position, name))
+        speech2 = ("Read more about %s at %s. " %(name, link))
+        speech = speech1 + speech2
+        print (speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find information on %s here." %(name)
+            }
+            ],
+            "image": {
+            "url": image,
+            "accessibilityText": "The %s" %(position)
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": position
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, I don't have that information. ")
+        speech2 = ("Find our leaders at %s" %(link))
         speech = speech1 + speech2
         print(speech)
         return {
@@ -499,16 +592,16 @@ def contactOffice(req):
             "openUrlAction": {
             "url": link
             },
-            "title": "Find our offices here."
+            "title": "Find our leaders here."
             }
             ],
             "image": {
-            "url": image,
-            "accessibilityText": "Offices at VIT"
+            "url": "http://vit.ac.in/images/schools/vitschoolimage.jpg",
+            "accessibilityText": "Schools at VIT"
             },
             "formattedText": speech1,
             "platform": "google",
-            "title": "Office not found",
+            "title": "Leader not found",
             "type": "basic_card"
             }
             ] 
@@ -607,6 +700,14 @@ def admissionQuery(req):
             }
             ] 
             }
+
+def default():
+    speech = "I'm sorry, I do not have the information you are looking for."
+    return {
+        "speech": speech,
+        "displayText": speech,
+        "source": "Institution-Chat-Bot"
+        }
 
 
 if __name__ == '__main__':
