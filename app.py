@@ -41,14 +41,12 @@ def makeWebhookResult(req):
     action = req.get("result").get("action")
     print(action)
     if action == "findBranchLink":
-        print("A")
         result = findBranchLink(req)
     elif action == "findGuide":
         result = findGuide(req)
     elif action == "findDean":
         result = findDean(req)
     elif action == "findSyllabus":
-        print("*******************************************")
         result = findSyllabus(req)
     elif action == "contactOffice":
         result = contactOffice(req)
@@ -270,7 +268,7 @@ def findDean(req):
         name = data['organization']['dean'][p_school]['name']
         link = data['organization']['dean'][p_school]['link']
         image = data['organization']['dean'][p_school]['image']
-        speech1 = ("The Dean of %s is %s " %(school, name))
+        speech1 = ("The Dean of %s is %s. " %(school, name))
         speech2 = ("Find all the faculty at %s. " %(link))
         speech = speech1 + speech2
         print (speech)
@@ -344,6 +342,266 @@ def findDean(req):
             ] 
             }
 
+def findGuide(req): 
+    print("E")
+    result = req.get("result")
+    print (result)
+    parameters = result.get("parameters")
+    print(parameters)
+    interest = parameters.get("specialization")
+    print(interest)
+    data = json.load(open('data.json'))
+    faculty = data['faculty']
+    print (faculty)
+    flag = "false"
+    for index in range(len(faculty)):
+        area = faculty[index]
+        for num in range(len(area)):
+            if area[num] == interest:
+                flag = "true"
+                break
+    print(flag)
+    if flag == "true":
+        school = data['faculty'][index]['school']
+        name = data['faculty'][index]['name']
+        link = data['faculty'][index]['link']
+        image = data['faculty'][index]['image']
+        role = data['faculty'][index]['role']
+        speech1 = ("%s, %s at %s, has expertise in %s. " %(name, role, school, interest))
+        speech2 = ("Find %s at %s. " %(name, link))
+        speech = speech1 + speech2
+        print (speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find %s here." %(name)
+            }
+            ],
+            "image": {
+            "url": image,
+            "accessibilityText": "%s" %(name)
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": "%s, %s" %(role, school),
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, none of our faculties seem to be researching in %s. Try another interest for a guide." %(interest))
+        link = "http://vit.ac.in/academics/schools"
+        speech2 = ("Find our schools at %s" %(link))
+        speech = speech1 + speech2
+        print(speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot"
+            }
+
+def contactOffice(req): 
+    print("D")
+    result = req.get("result")
+    print (result)
+    parameters = result.get("parameters")
+    print(parameters)
+    p_school = parameters.get("school")
+    print(p_school)
+    data = json.load(open('data.json'))
+    deans = data['organization']['dean']
+    print (deans)
+    flag = "false"
+    if deans.get(p_school) is not None:
+        flag = "true"
+    print(flag)
+    if flag == "true":
+        school = data['organization']['dean'][p_school]['school']
+        name = data['organization']['dean'][p_school]['name']
+        link = data['organization']['dean'][p_school]['link']
+        image = data['organization']['dean'][p_school]['image']
+        speech1 = ("The Dean of %s is %s. " %(school, name))
+        speech2 = ("Find all the faculty at %s. " %(link))
+        speech = speech1 + speech2
+        print (speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find all the faculty here."
+            }
+            ],
+            "image": {
+            "url": image,
+            "accessibilityText": "Dean of %s" %(school)
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": "Dean, %s" %(school),
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, that doesn't associate to a school at VIT, Vellore. ")
+        link = "http://vit.ac.in/academics/schools"
+        speech2 = ("Find our schools at %s" %(link))
+        speech = speech1 + speech2
+        print(speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find our schools here."
+            }
+            ],
+            "image": {
+            "url": "http://vit.ac.in/images/schools/vitschoolimage.jpg",
+            "accessibilityText": "Schools at VIT"
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "title": "School not found",
+            "type": "basic_card"
+            }
+            ] 
+            }
+
+def admissionQuery(req): 
+    print("D")
+    result = req.get("result")
+    print (result)
+    parameters = result.get("parameters")
+    print(parameters)
+    p_school = parameters.get("school")
+    print(p_school)
+    data = json.load(open('data.json'))
+    deans = data['organization']['dean']
+    print (deans)
+    flag = "false"
+    if deans.get(p_school) is not None:
+        flag = "true"
+    print(flag)
+    if flag == "true":
+        school = data['organization']['dean'][p_school]['school']
+        name = data['organization']['dean'][p_school]['name']
+        link = data['organization']['dean'][p_school]['link']
+        image = data['organization']['dean'][p_school]['image']
+        speech1 = ("The Dean of %s is %s. " %(school, name))
+        speech2 = ("Find all the faculty at %s. " %(link))
+        speech = speech1 + speech2
+        print (speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find all the faculty here."
+            }
+            ],
+            "image": {
+            "url": image,
+            "accessibilityText": "Dean of %s" %(school)
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": "Dean, %s" %(school),
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, that doesn't associate to a school at VIT, Vellore. ")
+        link = "http://vit.ac.in/academics/schools"
+        speech2 = ("Find our schools at %s" %(link))
+        speech = speech1 + speech2
+        print(speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find our schools here."
+            }
+            ],
+            "image": {
+            "url": "http://vit.ac.in/images/schools/vitschoolimage.jpg",
+            "accessibilityText": "Schools at VIT"
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "title": "School not found",
+            "type": "basic_card"
+            }
+            ] 
+            }
 
 
 if __name__ == '__main__':
