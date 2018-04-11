@@ -360,6 +360,8 @@ def findGuide(req):
             if area[num] == interest:
                 flag = "true"
                 break
+        if flag == "true":
+            break
     print(flag)
     if flag == "true":
         school = data['faculty'][index]['school']
@@ -431,10 +433,15 @@ def contactOffice(req):
     image = contact['image']
     if flag == "true":
         name = contact[office]['name']
+        print(name)
         address = contact[office]['address']
+        print(address)
         phone = contact[office]['number']
+        print(number)
         speech1 = ("%s is located at %s. Contact them at: %s" %(name, address, number))
+        print(speech1)
         speech2 = ("Find %s details at %s. " %(name, link))
+        print(speech2)
         speech = speech1 + speech2
         print (speech)
         return {
