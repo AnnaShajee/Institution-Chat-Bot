@@ -1,138 +1,151 @@
-import urllib, json, os, sys
-from flask import Flask, request, make_response
+import urllib
+import json 
 
+import os
+import sys
+
+from flask import Flask
+from flask import request
+from flask import make_response
+
+import actions
+
+#Starting the app in a global context
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def verify():
-        #Webhook verification
-        return "Project verified", 200
+def verifylink():
+    #Link verification
+    return "Project verified", 200
 
 @app.route('/webhook', methods=['GET'])
 def verifyweb():
-        #Webhook verification
-        return "Webhook verified", 200
+    #Webhook verification
+    return "Webhook verified", 200
         
 @app.route('/webhook', methods=['POST'])
 def webhook():        
-        print("********")
-        print("((((")
-        req = request.get_json()
-        print("Request: ")
-        print(json.dumps(req, indent = 4))
-        res = makeWebhookResult(req)
-        print(res)
-        res = json.dumps(res, indent= 4)
-        print(res)
-        r = make_response(res)
-        print(r)
-        r.headers['Content-Type'] = 'application/json'
-        print(r)
-        return r
+    print("********")
+    req = request.get_json()
+    print("Request: ")
+    print(json.dumps(req, indent = 4))
+    res = makeWebhookResult(req)
+    ret = json.dumps(res, indent= 4)
+    print("Result:")
+    print(res)
+    print(ret)
+    r = make_response(ret)
+    r.headers['Content-Type'] = 'application/json'
+    return r
+  
+def makeWebhookResult(req):
+    action = req.get("result").get("action")
+    if action == "findBranchLink":
+        print("A")
+        result = findBranchLink(req)
+        print(result)
+    elif action == "findGuide":
+        result = findGuide(req)
+    elif action == "findSyllabus":
+        result = findSyllabus(req)
+    elif action == "contactOffice":
+        result = contactOffice(req)
+    elif action == "admissionQuery":
+        result = admissionQuery(req)
+    else:
+        result = default()
+    print(result)
+    return result
 
-def processRequest(req):
-    if req.get("result").get("action") != "findBranchLink":
-        return {}
+def findBranchLink(req):
+    print("B")
     result = req.get("result")
-    print("A1")
+    print (result)
     parameters = result.get("parameters")
     print(parameters)
     branch = parameters.get("branch")
     print(branch)
-    link = {'CSE': 'www.google.co.in'}
-    speech = ("The link is " + str(link[branch]))
-    print("Response:")
-    print(speech)
-    return {
-        "speech": speech,
-        "displayText": speech,
-        "source": "Heere"
-        }
-
-def makeWebhookResult(req):
-        if req.get("result").get("action") != "findBranchLink":
-                return()
-        result = req.get("result")
-        print("A1")
-        parameters = result.get("parameters")
-        print(parameters)
-        branch = parameters.get("branch")
-        print(branch)
-        link = {'CSE': 'www.google.co.in'}
-        speech = ("The link is " + str(link[branch]))
-        print("Response:")
+    data = json.load(open('data.json'))
+    branches = data['branches']
+    print (branches)
+    flag = "false"
+    for index in range(len(branches)):
+        if branch == branches[index]['branch']:
+            flag = "true"
+            break
+    print (index)
+    print(flag)
+    if flag == "true":
+        link = data['branches'][index]['link']
+        name = data['branches'][index]['name']
+        school = data['branches'][index]['school']
+        speech1 = ("%s is available, under %s. " %(name, school))
+        speech2 = ("Read more at %s" % (link))
+        speech = speech1 + speech2
+        print (speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Read more here."
+            }
+            ],
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": school,
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, we don't offer that course at VIT, Vellore. ")
+        link = "http://vit.ac.in/admissions/ug."
+        speech2 = ("Check out the courses offered at %s" %(link))
+        speech = speech1 + speech2
         print(speech)
         return {
-                "speech": speech,
-                "displayText": speech,
-                "source": "Heere"
-                }
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find offered courses here."
+            }
+            ],
+            "formattedText": speech1,
+            "platform": "google",
+            "title": "Course not offered",
+            "type": "basic_card"
+            }
+            ] 
+            }
 
 if __name__ == '__main__':
-        port = int(os.getenv('PORT', 80))
-        print ("Starting on port %d" %(port))
-        app.run(debug = False, port = port, host = '0.0.0.0')
-        
-        
-    
-'''
-def comment():
-    baseurl = "https://query.yahooapis.com/v1/public/yql?"
-    yql_query = makeYqlQuery(req)
-    if yql_query is None:
-        return {}
-    yql_url = baseurl + urlencode({'q': yql_query}) + "&format=json"
-    result = urlopen(yql_url).read()
-    data = json.loads(result)
-    res = makeWebhookResult(data)
-    return res
-
-
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    if city is None:
-        return None
-
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
-
-def makeWebhookResult(data):
-    query = data.get('query')
-    if query is None:
-        return {}
-
-    result = query.get('results')
-    if result is None:
-        return {}
-
-    channel = result.get('channel')
-    if channel is None:
-        return {}
-
-    item = channel.get('item')
-    location = channel.get('location')
-    units = channel.get('units')
-    if (location is None) or (item is None) or (units is None):
-        return {}
-
-    condition = item.get('condition')
-    if condition is None:
-        return {}
-
-    # print(json.dumps(item, indent=4))
-
-    speech = "Today the weather in " + location.get('city') + ": " + condition.get('text') + \
-             ", And the temperature is " + condition.get('temp') + " " + units.get('temperature')
-
-    print("Response:")
-    print(speech)
-
-    return {
-        "speech": speech,
-        "displayText": speech,
-        # "data": data,
-        # "contextOut": [],
-        "source": "apiai-weather-webhook-sample"
-    }'''
+    port = int(os.getenv('PORT', 80))
+    print ("Starting on port %d" % port)
+    app.run(debug = False, port = port, host = '0.0.0.0')
