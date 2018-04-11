@@ -103,6 +103,10 @@ def findBranchLink(req):
             "title": "Read more here."
             }
             ],
+            "image": {
+            "url": "http://vit.ac.in/images/placements/placement2.JPG",
+            "accessibilityText": "Branches Offered"
+            },
             "formattedText": speech1,
             "platform": "google",
             "subtitle": school,
@@ -137,6 +141,10 @@ def findBranchLink(req):
             "title": "Find offered courses here."
             }
             ],
+            "image": {
+            "url": "http://vit.ac.in/images/placements/placement2.JPG",
+            "accessibilityText": "Branches Offered"
+            },
             "formattedText": speech1,
             "platform": "google",
             "title": "Course not offered",
@@ -190,6 +198,10 @@ def findSyllabus(req):
             "title": "Find syllabus here."
             }
             ],
+            "image": {
+            "url": "http://vit.ac.in/images/placements/placement1.JPG",
+            "accessibilityText": "Branches Offered"
+            },
             "formattedText": speech1,
             "platform": "google",
             "subtitle": "Syllabus",
@@ -224,6 +236,10 @@ def findSyllabus(req):
             "title": "Find offered courses here."
             }
             ],
+            "image": {
+            "url": "http://vit.ac.in/images/placements/placement1.JPG",
+            "accessibilityText": "Branches Offered"
+            },
             "formattedText": speech1,
             "platform": "google",
             "title": "Course not offered",
@@ -231,6 +247,8 @@ def findSyllabus(req):
             }
             ] 
             }
+
+
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 80))
