@@ -65,11 +65,9 @@ def findBranchLink(req):
     print (branches)
     for i in range(len(branches)):
         if branch == branches[i]['branch']:
-            index = i
+            flag = true
             break
-    print (i)
-    print (index)
-    if index != -1:
+    if flag == true:
         link = data['branches'][index]['link']
         name = data['branches'][index]['name']
         school = data['branches'][index]['school']
@@ -107,7 +105,7 @@ def findBranchLink(req):
     else: 
         speech1 = ("I'm sorry, we don't offer that course at VIT, Vellore. ")
         link = "http://vit.ac.in/admissions/ug."
-        speech2 = ("Check out the courses offered at %s" %(link))
+        speech2 = ("Check out the courses offered at %s", %(link))
         speech = speech1 + speech2
         print(speech)
         return {
