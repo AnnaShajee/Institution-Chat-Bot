@@ -45,6 +45,8 @@ def makeWebhookResult(req):
         result = findBranchLink(req)
     elif action == "findGuide":
         result = findGuide(req)
+    elif action == "findDean":
+        result = findDean(req)
     elif action == "findSyllabus":
         print("*******************************************")
         result = findSyllabus(req)
@@ -199,7 +201,7 @@ def findSyllabus(req):
             }
             ],
             "image": {
-            "url": "http://vit.ac.in/images/placements/placement1.JPG",
+            "url": "http://vit.ac.in/images/placements/placement2.JPG",
             "accessibilityText": "Branches Offered"
             },
             "formattedText": speech1,
@@ -212,7 +214,7 @@ def findSyllabus(req):
             }
     else: 
         speech1 = ("I'm sorry, we don't offer that course at VIT, Vellore. ")
-        link = "http://vit.ac.in/admissions/ug."
+        link = "http://vit.ac.in/admissions/ug"
         speech2 = ("Check out the courses offered at %s" %(link))
         speech = speech1 + speech2
         print(speech)
@@ -243,6 +245,100 @@ def findSyllabus(req):
             "formattedText": speech1,
             "platform": "google",
             "title": "Course not offered",
+            "type": "basic_card"
+            }
+            ] 
+            }
+
+def findDean(req): 
+    print("D")
+    result = req.get("result")
+    print (result)
+    parameters = result.get("parameters")
+    print(parameters)
+    p_school = parameters.get("school")
+    print(p_school)
+    data = json.load(open('data.json'))
+    deans = data['organization']['dean']
+    print (deans)
+    flag = "false"
+    if deans.get(p_school) is not None:
+        flag = "true"
+    print(flag)
+    if flag == "true":
+        school = data['organization']['dean'][p_school]['school']
+        name = data['organization']['dean'][p_school]['name']
+        link = data['organization']['dean'][p_school]['link']
+        image = data['organization']['dean'][p_school]['image']
+        speech1 = ("The Dean of %s is %s " %(school, name))
+        speech2 = ("Find all the faculty at %s. " %(link))
+        speech = speech1 + speech2
+        print (speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find all the faculty here."
+            }
+            ],
+            "image": {
+            "url": image,
+            "accessibilityText": "Dean of %s" %(school)
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": "Dean, %s" %(school),
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, that doesn't associate to a school at VIT, Vellore. ")
+        link = "http://vit.ac.in/academics/schools"
+        speech2 = ("Find our schools at %s" %(link))
+        speech = speech1 + speech2
+        print(speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find our schools here."
+            }
+            ],
+            "image": {
+            "url": "http://vit.ac.in/images/schools/vitschoolimage.jpg",
+            "accessibilityText": "Schools at VIT"
+            },
+            "formattedText": speech1,
+            "platform": "google",
+            "title": "School not found",
             "type": "basic_card"
             }
             ] 
