@@ -37,7 +37,7 @@ def webhook():
     r = make_response(ret)
     r.headers['Content-Type'] = 'application/json'
     return r
-
+  
 def makeWebhookResult(req):
     action = req.get("result").get("action")
     if action == "findBranchLink":
