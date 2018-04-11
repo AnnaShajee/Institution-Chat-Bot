@@ -8,7 +8,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 
-import utils
+import actions
 
 #Starting the app in a global context
 app = Flask(__name__)
