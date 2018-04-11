@@ -1,18 +1,88 @@
 {
   "branches": [
     {
-      "branch": "CSE",
-      "name": "Computer Science and Engineering",
+      "branch": "cse",
+      "name": "B.Tech - Computer Science and Engineering",
       "school": "SCOPE",
       "link": "http://www.vit.ac.in/academics/schools/scope/courses",
       "syllabus": "http://www.vit.ac.in/files/BTechCSE_curriculum.pdf"
     },
     {
-      "branch": "CSE",
-      "name": "Computer Science and Engineering",
-      "school": "SCOPE",
+      "branch": "it",
+      "name": "Information and Technology",
+      "school": "SITE",
       "link": "http://www.vit.ac.in/academics/schools/site/courses",
       "syllabus": "http://www.vit.ac.in/files/academics/schools/SITE/Courses/BTech_IT_curriculum.pdf"
+    },
+    {
+      "branch": "mechanical",
+      "name": "B.Tech - Mechanical Engineering",
+      "school": "SMEC",
+      "link": "http://www.vit.ac.in/academics/schools/smec/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SMBS/Courses/B.%20Tech.%20Mechanical%20Engg.%20Curriculum%20&%20Syllabus.pdf"
+    },
+    {
+      "branch": "civil",
+      "name": "B.Tech - Civil Engineering",
+      "school": "SCALE",
+      "link": "http://www.vit.ac.in/academics/schools/scale/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SMBS/Courses/B.Tech.CivilEngineering.pdf"
+    },
+    {
+      "branch": "chemical",
+      "name": "B.Tech - Chemical Engineering",
+      "school": "SCALE",
+      "link": "http://www.vit.ac.in/academics/schools/scale/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/scale/Chemical%20Engineering.pdf"
+    },
+    {
+      "branch": "electrical",
+      "name": "B.Tech - Electrical and Electronics Engineering",
+      "school": "SELECT",
+      "link": "http://www.vit.ac.in/academics/schools/select/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SELECT/courses/BTech_EEE_Curriculum.pdf"
+    },
+    {
+      "branch": "electronics",
+      "name": "B.Tech - Electronics and Communication Engineering",
+      "school": "SENSE",
+      "link": "http://www.vit.ac.in/academics/schools/sense/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/sense/courses/BTechElectronicsandCommunicationEngineering_Curriculum.pdf"
+    },
+    {
+      "branch": "instrumentation",
+      "name": "B.Tech - Electronics and Instrumentation Engineering",
+      "school": "SELECT",
+      "link": "http://www.vit.ac.in/academics/schools/select/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SELECT/courses/BTech_EIE_Curriculum.pdf"
+    },
+    {
+      "branch": "biomedical",
+      "name": "B.Tech - Electronics and Communication with spl. In Biomedical Engineering",
+      "school": "SENSE",
+      "link": "http://www.vit.ac.in/academics/schools/sense/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/sense/courses/B_Tech_Biomedical_Curriculum.pdf"
+    },
+    {
+      "branch": "bioinformatics",
+      "name": "B.Tech - Computer Science and Engg (Spec. in Bioinformatics)",
+      "school": "SCOPE",
+      "link": "http://www.vit.ac.in/academics/schools/scope/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SITE/Courses/BTech_IT_curriculum.pdf"
+    },
+    {
+      "branch": "biotechnology",
+      "name": "B.Tech - Biotechnology",
+      "school": "SBST",
+      "link": "http://www.vit.ac.in/academics/schools/sbst/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SBST/Courses/Btech_Biotechnology_Curriculum.pdf"
+    },
+    {
+      "branch": "production",
+      "name": "B.Tech - Production and Industrial Engineering",
+      "school": "SMEC",
+      "link": "http://www.vit.ac.in/academics/schools/smec/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SMBS/Courses/Production%20&%20B.%20Tech.%20Production%20and%20Industrial%20Engg.%20%20Curriculum%20&%20Syllabus.pdf"
     }
   ],
   "faculty": [
@@ -54,16 +124,67 @@
   ],
   "organization": {
     "chancellor": "Dr. G Viswanathan",
-    "vice-president": "Mr. G V Selvam",
-    "vice-chancellor": "Dr. Anand A Samuel",
-    "pro-vice-chancellor": "Dr. S Narayanan",
+    "vice president": "Mr. G V Selvam",
+    "vice chancellor": "Dr. Anand A Samuel",
+    "pro vice chancellor": "Dr. S Narayanan",
     "dean": {
-      "SITE": "Dr. Aswani Kumar Cherukuri",
-      "SCOPE": "Dr. Saravanan R",
+      "site": "Dr. Aswani Kumar Cherukuri",
+      "scope": "Dr. Saravanan R",
       "academics": "Dr. Jayaraman G"
+    },
+    "hod": {
+      "analytics": "Prof. Lakshmanan K",
+      "software systems": "Prof. Santhi V",
+      "computational intelligence": "Prof. Nagaraja Rao A",
+      "database systems": "Prof. Anuradha J"
     }
   },
   "contact": {
-    
+    "academics": {
+      "address": "201 & 202 A. L. Mudhaliar Block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2011"
+      ]
+    },
+    "welfare": {
+      "address": "108, First Floor Dr. MGR block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2200"
+      ]
+    },
+    "admission": {
+      "address": "G-09, Ground Floor, Dr. MGR block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2157",
+        "+(91) 416 220 2168",
+        "+(91) 416 330 5555"
+      ]
+    },
+    "international": {
+      "address": "109, First Floor, Dr. MGR block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2131",
+        "+(91) 416 224 3118"
+      ]
+    },
+    "counselling": {
+      "address": "720, 7th Floor, Technology Tower, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2011"
+      ]
+    },
+    "placement": {
+      "address": "201 & 202 A. L. Mudhaliar Block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2011"
+      ]
+    },
+    "records": {
+      "address": "G-14; Dr. MGR Block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2012"
+      ]
+    },
+    "link": "http://vit.ac.in/about/administrativeOffices"
   }
 }
