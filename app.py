@@ -107,7 +107,7 @@ def findBranchLink(req):
     else: 
         speech1 = ("I'm sorry, we don't offer that course at VIT, Vellore. ")
         link = "http://vit.ac.in/admissions/ug."
-        speech2 = ("Check out the courses offered at %s", %(link))
+        speech2 = ("Check out the courses offered at %s" %(link))
         speech = speech1 + speech2
         print(speech)
         return {
