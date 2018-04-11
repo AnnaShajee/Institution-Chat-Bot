@@ -37,13 +37,19 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") == "findBranchLink":
+    action = req.get("result").get("action")
+    if action == "findBranchLink":
         result = findBranchLink(req)
-        print(result)
-    elif req.get("result").get("action") == "findGuide":
+    elif action == "findGuide":
         result = findGuide(req)
+    elif action == "findSyllabus":
+        result = findSyllabus(req)
+    elif action == "contactOffice":
+        result = contactOffice(req)
+    elif action == "admissionQuery":
+        result = admissionQuery(req)
     else:
-        result = {}
+        result = default()
     print(result)
     return result
 
@@ -58,47 +64,82 @@ def findBranchLink(req):
     branches = data['branches']
     print (branches)
     for i in range(len(branches)):
-        if "CSE" == branches[i]['branch']:
+        if branch == branches[i]['branch']:
             index = i
             break
     print (i)
     print (index)
     if index != -1:
         link = data['branches'][index]['link']
-        speech = ("This branch is available. Read more at %s" %(link))
-    print("Response:")
-    print(speech)
-    return {
-        "speech": speech,
-        "displayText": speech,
-        "source": "Heere",
-        "messages": [
-        {
-        "displayText": speech,
-        "platform": "google",
-        "textToSpeech": "Audio response",
-        "type": "simple_response"
-        },
-        {
-        "buttons": [
-        {
-        "openUrlAction": {
-        "url": link
-        },
-        "title": "AoG Card Link title"
-        }
-        ],
-        "formattedText": "AoG Card Description",
-        "image": {
-        "url": "http://imageUrl.com"
-        },
-        "platform": "google",
-        "subtitle": "AoG Card Subtitle",
-        "title": "AoG Card Title",
-        "type": "basic_card"
-        }
-        ] 
-        }
+        name = data['branches'][index]['name']
+        school = data['branches'][index]['school']
+        speech1 = ("%s is available, under %s. " %(name, school))
+        speech2 = ("Read more at %s" % (link))
+        speech = speech1 + speech2
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Read more here."
+            }
+            ],
+            "formattedText": speech1,
+            "platform": "google",
+            "subtitle": school,
+            "title": name,
+            "type": "basic_card"
+            }
+            ] 
+            }
+    else: 
+        speech1 = ("I'm sorry, we don't offer that course at VIT, Vellore. ")
+        link = "http://vit.ac.in/admissions/ug."
+        speech2 = ("Check out the courses offered at %s", %(link))
+        speech = speech1 + speech2
+        print(speech)
+        return {
+            "speech": speech,
+            "displayText": speech,
+            "source": "Institution-Chat-Bot",
+            "messages": [
+            {
+            "displayText": speech,
+            "platform": "google",
+            "textToSpeech": speech,
+            "type": "simple_response"
+            },
+            {
+            "buttons": [
+            {
+            "openUrlAction": {
+            "url": link
+            },
+            "title": "Find offered courses here."
+            }
+            ],
+            "formattedText": speech1,
+            "platform": "google",
+            "title": "Course not offered",
+            "type": "basic_card"
+            }
+            ] 
+            }
+
+
+
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 80))
