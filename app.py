@@ -40,6 +40,7 @@ def makeWebhookResult(req):
     action = req.get("result").get("action")
     if action == "findBranchLink":
         result = findBranchLink(req)
+        print(result)
     elif action == "findGuide":
         result = findGuide(req)
     elif action == "findSyllabus":
@@ -64,11 +65,11 @@ def findBranchLink(req):
     branches = data['branches']
     print (branches)
     flag = "false"
-    for i in range(len(branches)):
+    for index in range(len(branches)):
         if branch == branches[i]['branch']:
             flag = "true"
             break
-    print (i)
+    print (index)
     print(flag)
     if flag == "true":
         link = data['branches'][index]['link']
@@ -77,6 +78,7 @@ def findBranchLink(req):
         speech1 = ("%s is available, under %s. " %(name, school))
         speech2 = ("Read more at %s" % (link))
         speech = speech1 + speech2
+        print (speech)
         return {
             "speech": speech,
             "displayText": speech,
