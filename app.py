@@ -601,7 +601,7 @@ def findLeader(req):
             },
             "formattedText": speech1,
             "platform": "google",
-            "title": "Leader not found",
+            "title": "%s not found" %(role),
             "type": "basic_card"
             }
             ] 
