@@ -404,10 +404,7 @@ def findGuide(req):
             ] 
             }
     else: 
-        speech1 = ("I'm sorry, none of our faculties seem to be researching in %s. Try another interest for a guide." %(interest))
-        link = "http://vit.ac.in/academics/schools"
-        speech2 = ("Find our schools at %s" %(link))
-        speech = speech1 + speech2
+        speech = ("I'm sorry, none of our faculties seem to be researching in %s. Try another interest for a guide." %(interest))
         print(speech)
         return {
             "speech": speech,
@@ -416,27 +413,28 @@ def findGuide(req):
             }
 
 def contactOffice(req): 
-    print("D")
+    print("F")
     result = req.get("result")
     print (result)
     parameters = result.get("parameters")
     print(parameters)
-    p_school = parameters.get("school")
-    print(p_school)
+    office = parameters.get("office")
+    print(office)
     data = json.load(open('data.json'))
-    deans = data['organization']['dean']
-    print (deans)
+    contact = data['contact']
+    print (contact)
     flag = "false"
-    if deans.get(p_school) is not None:
+    if contact.get(office) is not None:
         flag = "true"
     print(flag)
+    link = contact['link']
+    image = contact['image']
     if flag == "true":
-        school = data['organization']['dean'][p_school]['school']
-        name = data['organization']['dean'][p_school]['name']
-        link = data['organization']['dean'][p_school]['link']
-        image = data['organization']['dean'][p_school]['image']
-        speech1 = ("The Dean of %s is %s. " %(school, name))
-        speech2 = ("Find all the faculty at %s. " %(link))
+        name = contact[office]['name']
+        address = contact[office]['address']
+        phone = contact[office]['number']
+        speech1 = ("%s is located at %s. Contact them at: %s" %(name, address, number))
+        speech2 = ("Find %s details at %s. " %(name, link))
         speech = speech1 + speech2
         print (speech)
         return {
@@ -456,25 +454,24 @@ def contactOffice(req):
             "openUrlAction": {
             "url": link
             },
-            "title": "Find all the faculty here."
+            "title": "Find %s details here." %(name)
             }
             ],
             "image": {
             "url": image,
-            "accessibilityText": "Dean of %s" %(school)
+            "accessibilityText": "%s" %(name)
             },
             "formattedText": speech1,
             "platform": "google",
-            "subtitle": "Dean, %s" %(school),
+            "subtitle": "Contact Information",
             "title": name,
             "type": "basic_card"
             }
             ] 
             }
     else: 
-        speech1 = ("I'm sorry, that doesn't associate to a school at VIT, Vellore. ")
-        link = "http://vit.ac.in/academics/schools"
-        speech2 = ("Find our schools at %s" %(link))
+        speech1 = ("I'm sorry, that doesn't associate to an office at VIT, Vellore. ")
+        speech2 = ("Find our offices at %s" %(link))
         speech = speech1 + speech2
         print(speech)
         return {
@@ -494,16 +491,16 @@ def contactOffice(req):
             "openUrlAction": {
             "url": link
             },
-            "title": "Find our schools here."
+            "title": "Find our offices here."
             }
             ],
             "image": {
-            "url": "http://vit.ac.in/images/schools/vitschoolimage.jpg",
-            "accessibilityText": "Schools at VIT"
+            "url": image,
+            "accessibilityText": "Offices at VIT"
             },
             "formattedText": speech1,
             "platform": "google",
-            "title": "School not found",
+            "title": "Office not found",
             "type": "basic_card"
             }
             ] 
