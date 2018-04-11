@@ -495,7 +495,7 @@ def contactOffice(req):
             "textToSpeech": speech,
             "type": "simple_response"
             },
-eifjccg            {
+            {
             "buttons": [
             {
             "openUrlAction": {
