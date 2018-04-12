@@ -1,0 +1,306 @@
+{
+  "branches": [
+    {
+      "branch": "cse",
+      "name": "B.Tech - Computer Science and Engineering",
+      "school": "SCOPE",
+      "link": "http://www.vit.ac.in/academics/schools/scope/courses",
+      "syllabus": "http://www.vit.ac.in/files/BTechCSE_curriculum.pdf"
+    },
+    {
+      "branch": "it",
+      "name": "Information and Technology",
+      "school": "SITE",
+      "link": "http://www.vit.ac.in/academics/schools/site/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SITE/Courses/BTech_IT_curriculum.pdf"
+    },
+    {
+      "branch": "mechanical",
+      "name": "B.Tech - Mechanical Engineering",
+      "school": "SMEC",
+      "link": "http://www.vit.ac.in/academics/schools/smec/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SMBS/Courses/B.%20Tech.%20Mechanical%20Engg.%20Curriculum%20&%20Syllabus.pdf"
+    },
+    {
+      "branch": "civil",
+      "name": "B.Tech - Civil Engineering",
+      "school": "SCALE",
+      "link": "http://www.vit.ac.in/academics/schools/scale/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SMBS/Courses/B.Tech.CivilEngineering.pdf"
+    },
+    {
+      "branch": "chemical",
+      "name": "B.Tech - Chemical Engineering",
+      "school": "SCALE",
+      "link": "http://www.vit.ac.in/academics/schools/scale/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/scale/Chemical%20Engineering.pdf"
+    },
+    {
+      "branch": "electrical",
+      "name": "B.Tech - Electrical and Electronics Engineering",
+      "school": "SELECT",
+      "link": "http://www.vit.ac.in/academics/schools/select/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SELECT/courses/BTech_EEE_Curriculum.pdf"
+    },
+    {
+      "branch": "electronics",
+      "name": "B.Tech - Electronics and Communication Engineering",
+      "school": "SENSE",
+      "link": "http://www.vit.ac.in/academics/schools/sense/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/sense/courses/BTechElectronicsandCommunicationEngineering_Curriculum.pdf"
+    },
+    {
+      "branch": "instrumentation",
+      "name": "B.Tech - Electronics and Instrumentation Engineering",
+      "school": "SELECT",
+      "link": "http://www.vit.ac.in/academics/schools/select/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SELECT/courses/BTech_EIE_Curriculum.pdf"
+    },
+    {
+      "branch": "biomedical",
+      "name": "B.Tech - Electronics and Communication with spl. In Biomedical Engineering",
+      "school": "SENSE",
+      "link": "http://www.vit.ac.in/academics/schools/sense/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/sense/courses/B_Tech_Biomedical_Curriculum.pdf"
+    },
+    {
+      "branch": "bioinformatics",
+      "name": "B.Tech - Computer Science and Engg (Spec. in Bioinformatics)",
+      "school": "SCOPE",
+      "link": "http://www.vit.ac.in/academics/schools/scope/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SITE/Courses/BTech_IT_curriculum.pdf"
+    },
+    {
+      "branch": "biotechnology",
+      "name": "B.Tech - Biotechnology",
+      "school": "SBST",
+      "link": "http://www.vit.ac.in/academics/schools/sbst/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SBST/Courses/Btech_Biotechnology_Curriculum.pdf"
+    },
+    {
+      "branch": "production",
+      "name": "B.Tech - Production and Industrial Engineering",
+      "school": "SMEC",
+      "link": "http://www.vit.ac.in/academics/schools/smec/courses",
+      "syllabus": "http://www.vit.ac.in/files/academics/schools/SMBS/Courses/Production%20&%20B.%20Tech.%20Production%20and%20Industrial%20Engg.%20%20Curriculum%20&%20Syllabus.pdf"
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Prof. Geraldine Bessie Amali",
+      "role": "Assistant Professor",
+      "link": "http://vit.ac.in/academics/schools/scope/faculty",
+      "image": "http://vit.ac.in/img/faculty/14055.jpg",
+      "department": "Computational Intelligence",
+      "school": "SCOPE",
+      "areas": [
+        "artificial neural networks",
+        "optimization agorithms",
+        "reinforcement learning",
+        "supervised learning"
+      ]
+    },
+    {
+      "name": "Prof. Parveen Sultana H",
+      "role": "Associate Professor",
+      "link": "http://vit.ac.in/academics/schools/scope/faculty",
+      "image": "http://vit.ac.in/img/faculty/10435.jpg",
+      "department": "Software Systems",
+      "school": "SCOPE",
+      "areas": [
+        "mobile computing",
+        "iot",
+        "reinforcement learning"
+      ]
+    },
+    {
+      "name": "Prof. Anthoniraj",
+      "role": "Associate Professor",
+      "link": "http://vit.ac.in/academics/schools/scope/faculty",
+      "image": "http://vit.ac.in/img/faculty/10941.jpg",
+      "department": "Software Systems",
+      "school": "SCOPE",
+      "areas": [
+        "internet programming",
+        "data mining",
+        "machine learning",
+        "semantic web"
+      ]
+    }
+  ],
+  "organization": {
+    "link": "http://vit.ac.in/about/leadership",
+    "chancellor": {
+      "name": "Dr. G Viswanathan",
+      "image": "http://vit.ac.in/images/Leadership/gv.jpg",
+      "role": "Chancellor"
+    },
+    "vice president": {
+      "name": "Mr. G V Selvam",
+      "image": "http://vit.ac.in/images/Leadership/vpc_small.jpg",
+      "role": "Vice- President"
+    },
+    "vice chancellor": {
+      "name": "Dr. Anand A Samuel",
+      "image": "http://vit.ac.in/images/Leadership/Anand%20A.%20Samuel.jpg",
+      "role": "Vice- Chancellor"
+    },
+    "pro vice chancellor": {
+      "name": "Dr. S Narayanan",
+      "image": "http://vit.ac.in/images/Leadership/provc.jpg",
+      "role": "Pro- Vice- Chancellor"
+    },
+    "dean": {
+      "site": {
+        "name": "Dr. Aswani Kumar Cherukuri",
+        "school": "SITE",
+        "link": "http://vit.ac.in/academics/schools/site/faculty",
+        "image": "http://vit.ac.in/img/faculty/10288.jpg"
+      },
+      "scope": {
+        "name": "Dr. Saravanan R",
+        "school": "SCOPE",
+        "link": "http://vit.ac.in/academics/schools/scope/faculty",
+        "image": "http://vit.ac.in/img/faculty/10230.jpg"
+      },
+      "smec": {
+        "school": "SMEC",
+        "name": "Prof. Arivazhagan N",
+        "link": "http://vit.ac.in/academics/schools/smec/faculty",
+        "image": "http://vit.ac.in/img/faculty/11234.jpg"
+      },
+      "select": {
+        "name": "Dr. Arulmozhivarman P",
+        "school": "SELECT",
+        "link": "http://vit.ac.in/academics/schools/select/faculty",
+        "image": "http://vit.ac.in/img/faculty/10680.jpg"
+      },
+      "sense": {
+        "name": "Dr. Elizabeth Rufus",
+        "school": "SENSE",
+        "link": "http://vit.ac.in/academics/schools/sense/faculty",
+        "image": "http://vit.ac.in/img/faculty/10117.jpg"
+      },
+      "scale": {
+        "name": "Prof. Sekar S K",
+        "school": "SCALE",
+        "link": "http://vit.ac.in/academics/schools/scale/faculty",
+        "image": "http://vit.ac.in/img/faculty/10138.jpg"
+      },
+      "academics": {
+        "name": "Dr. Jayaraman G",
+        "school": "Academics",
+        "link": "",
+        "image": ""
+      }
+    },
+    "hod": {
+      "analytics": "Prof. Lakshmanan K",
+      "software systems": "Prof. Santhi V",
+      "computational intelligence": "Prof. Nagaraja Rao A",
+      "database systems": "Prof. Anuradha J"
+    }
+  },
+  "contact": {
+    "academics": {
+      "name": "Academics Office",
+      "address": "201 & 202 A. L. Mudhaliar Block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2011"
+      ]
+    },
+    "welfare": {
+      "name": "Student Welfare Office",
+      "address": "108, First Floor Dr. MGR block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2200"
+      ]
+    },
+    "admission": {
+      "name": "Admissions Office",
+      "address": "G-09, Ground Floor, Dr. MGR block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2157",
+        "+(91) 416 220 2168",
+        "+(91) 416 330 5555"
+      ]
+    },
+    "international": {
+      "name": "International Relations Office",
+      "address": "109, First Floor, Dr. MGR block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2131",
+        "+(91) 416 224 3118"
+      ]
+    },
+    "counselling": {
+      "name": "Counselling Office",
+      "address": "720, 7th Floor, Technology Tower, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2011"
+      ]
+    },
+    "placement": {
+      "name": "Placement Office",
+      "address": "201 & 202 A. L. Mudhaliar Block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2011"
+      ]
+    },
+    "records": {
+      "name": "Student Records Office",
+      "address": "G-14; Dr. MGR Block, VIT, Vellore",
+      "number": [
+        "+(91) 416 220 2012"
+      ]
+    },
+    "link": "http://vit.ac.in/about/administrativeOffices",
+    "image": "http://vit.ac.in/images/aboutvit/administrative_office.jpg"
+  },
+  "query": {
+    "centre": {
+      "speech": "Here are the available test centres for VITEEE 2018.",
+      "link": "http://www.vit.ac.in/admissions/testcentres",
+      "title": "Test Centres",
+      "text": "See the centres."
+    },
+    "admit": {
+      "speech": "Download your admit card for VITEEE 2018 from here.",
+      "link": "http://otbs.centralindia.cloudapp.azure.com/VITOTBS/Default.aspx",
+      "title": "Admit Card",
+      "text": "Download now."
+    },
+    "procedure": {
+      "speech": "Here is the VIT Program application procedure.",
+      "link": "http://www.vit.ac.in/files/10_Steps_Admission_Procedure.pdf",
+      "title": "Application Procedure",
+      "text": "Read now."
+    },
+    "status": {
+      "speech": "Here is your UG program application status.",
+      "link": "http://vtop2.vit.ac.in:8080/VITEEE/AppStatus.jsp",
+      "title": "Application Status",
+      "text": "View now."
+    },
+    "fee": {
+      "speech": "Here is the academic fee information.",
+      "link": "http://vit.ac.in/admissions/ugafee",
+      "title": "Academic Fees",
+      "text": "View now."
+    },
+    "mock": {
+      "speech": "Attempt the VITEEE 2018 mock test.",
+      "link": "http://13.250.178.126/VIT/tp/index.php",
+      "title": "Mock Test",
+      "text": "Attempt now."
+    },
+    "slot": {
+      "speech": "Book your VITEEE 2018 slot.",
+      "link": "http://otbs.centralindia.cloudapp.azure.com/VITOTBS/Default.aspx",
+      "title": "Slot Booking",
+      "text": "Book now."
+    },
+    "link": "http://www.vit.ac.in/btechadmissions/viteee2018",
+    "image": "http://www.vit.ac.in/images/logo_2.png"
+  }
+}

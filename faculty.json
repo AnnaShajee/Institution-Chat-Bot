@@ -1,0 +1,39 @@
+{
+  "1": {
+    "name": "Prof. Geraldine Bessie Amali",
+    "role": "Assistant Professor",
+    "department": "Computational Intelligence",
+    "school": "SCOPE",
+    "areas": {
+      "artificial neural networks": true,
+      "optimization agorithms": true,
+      "reinforcement learning": true,
+      "supervised learning": true
+    }
+  },
+  "2": {
+    "name": "Prof. Parveen Sultana H",
+    "role": "Associate Professor",
+    "department": "Software Systems",
+    "school": "SCOPE",
+    "areas": {
+      "mobile computing": true,
+      "iot": true,
+      "reinforcement learning": true
+    }
+  },
+  "3": {
+    "name": "Prof. Anthoniraj",
+    "role": "Associate Professor",
+    "department": "Software Systems",
+    "school": "SCOPE",
+    "areas": {
+      "internet programming": true,
+      "data mining": true,
+      "machine learning": true,
+      "semantic web": true
+    }
+  }
+}
+
+//https://jsoneditoronline.org/
