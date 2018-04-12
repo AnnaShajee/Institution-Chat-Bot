@@ -129,27 +129,24 @@
     }
   ],
   "organization": {
+    "link": "http://vit.ac.in/about/leadership",
     "chancellor": {
       "name": "Dr. G Viswanathan",
-      "link": "http://vit.ac.in/about/leadership",
       "image": "http://vit.ac.in/images/Leadership/gv.jpg",
       "role": "Chancellor"
     },
     "vice president": {
       "name": "Mr. G V Selvam",
-      "link": "http://vit.ac.in/about/leadership",
       "image": "http://vit.ac.in/images/Leadership/vpc_small.jpg",
       "role": "Vice- President"
     },
     "vice chancellor": {
       "name": "Dr. Anand A Samuel",
-      "link": "http://vit.ac.in/about/leadership",
       "image": "http://vit.ac.in/images/Leadership/Anand%20A.%20Samuel.jpg",
       "role": "Vice- Chancellor"
     },
     "pro vice chancellor": {
       "name": "Dr. S Narayanan",
-      "link": "http://vit.ac.in/about/leadership",
       "image": "http://vit.ac.in/images/Leadership/provc.jpg",
       "role": "Pro- Vice- Chancellor"
     },
