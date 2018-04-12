@@ -632,8 +632,8 @@ def admissionQuery(req):
         link = data['query'][query]['link']
         text = data['query'][query]['text']
         return {
-            "speech": speech,
-            "displayText": speech,
+            "speech": (speech + " "+ link),
+            "displayText": (speech + " " + link),
             "source": "Institution-Chat-Bot",
             "messages": [
             {
