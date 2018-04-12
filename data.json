@@ -256,5 +256,51 @@
     },
     "link": "http://vit.ac.in/about/administrativeOffices",
     "image": "http://vit.ac.in/images/aboutvit/administrative_office.jpg"
+  },
+  "query": {
+    "centre": {
+      "speech": "Here are the available test centres for VITEEE 2018.",
+      "link": "http://www.vit.ac.in/admissions/testcentres",
+      "title": "Test Centres",
+      "text": "See the centres."
+    },
+    "admit": {
+      "speech": "Download your admit card for VITEEE 2018 from here.",
+      "link": "http://otbs.centralindia.cloudapp.azure.com/VITOTBS/Default.aspx",
+      "title": "Admit Card",
+      "text": "Download now."
+    },
+    "procedure": {
+      "speech": "Here is the VIT Program application procedure.",
+      "link": "http://www.vit.ac.in/files/10_Steps_Admission_Procedure.pdf",
+      "title": "Application Procedure",
+      "text": "Read now."
+    },
+    "status": {
+      "speech": "Here is your UG program application status.",
+      "link": "http://vtop2.vit.ac.in:8080/VITEEE/AppStatus.jsp",
+      "title": "Application Status",
+      "text": "View now."
+    },
+    "fee": {
+      "speech": "Here is the academic fee information.",
+      "link": "http://vit.ac.in/admissions/ugafee",
+      "title": "Academic Fees",
+      "text": "View now."
+    },
+    "mock": {
+      "speech": "Attempt the VITEEE 2018 mock test.",
+      "link": "http://13.250.178.126/VIT/tp/index.php",
+      "title": "Mock Test",
+      "text": "Attempt now."
+    },
+    "slot": {
+      "speech": "Book your VITEEE 2018 slot.",
+      "link": "http://otbs.centralindia.cloudapp.azure.com/VITOTBS/Default.aspx",
+      "title": "Slot Booking",
+      "text": "Book now."
+    },
+    "link": "http://www.vit.ac.in/btechadmissions/viteee2018",
+    "image": "http://www.vit.ac.in/images/logo_2.png"
   }
 }
