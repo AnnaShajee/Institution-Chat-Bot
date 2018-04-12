@@ -612,6 +612,8 @@ def findLeader(req):
 
 def admissionQuery(req): 
     print("H")
+    result = req.get("result")
+    print(result)
     parameters = result.get("parameters")
     print(parameters)
     query = parameters.get("query")
