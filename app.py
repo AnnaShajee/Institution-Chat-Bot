@@ -581,9 +581,9 @@ def findLeader(req):
             "source": "Institution-Chat-Bot",
             "messages": [
             {
-            "displayText": speech,
+            "displayText": speech1,
             "platform": "google",
-            "textToSpeech": speech,
+            "textToSpeech": speech1,
             "type": "simple_response"
             },
             {
