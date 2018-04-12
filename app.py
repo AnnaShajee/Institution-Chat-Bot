@@ -611,29 +611,24 @@ def findLeader(req):
             }
 
 def admissionQuery(req): 
-    print("D")
-    result = req.get("result")
-    print (result)
+    print("H")
     parameters = result.get("parameters")
     print(parameters)
-    p_school = parameters.get("school")
-    print(p_school)
+    query = parameters.get("query")
+    print(query)
     data = json.load(open('data.json'))
-    deans = data['organization']['dean']
-    print (deans)
+    queries = data['query']
+    print (queries)
     flag = "false"
-    if deans.get(p_school) is not None:
+    if queries.get(query) is not None:
         flag = "true"
     print(flag)
+    image = data['query']['image']
     if flag == "true":
-        school = data['organization']['dean'][p_school]['school']
-        name = data['organization']['dean'][p_school]['name']
-        link = data['organization']['dean'][p_school]['link']
-        image = data['organization']['dean'][p_school]['image']
-        speech1 = ("The Dean of %s is %s. " %(school, name))
-        speech2 = ("Find all the faculty at %s. " %(link))
-        speech = speech1 + speech2
-        print (speech)
+        speech = data['query'][query]['speech']
+        title = data['query'][query]['title']
+        link = data['query'][query]['link']
+        text = data['query'][query]['text']
         return {
             "speech": speech,
             "displayText": speech,
@@ -651,25 +646,24 @@ def admissionQuery(req):
             "openUrlAction": {
             "url": link
             },
-            "title": "Find all the faculty here."
+            "title": text
             }
             ],
             "image": {
             "url": image,
-            "accessibilityText": "Dean of %s" %(school)
+            "accessibilityText": title
             },
-            "formattedText": speech1,
+            "formattedText": speech,
             "platform": "google",
-            "subtitle": "Dean, %s" %(school),
-            "title": name,
+            "title": title,
             "type": "basic_card"
             }
             ] 
             }
     else: 
-        speech1 = ("I'm sorry, that doesn't associate to a school at VIT, Vellore. ")
-        link = "http://vit.ac.in/academics/schools"
-        speech2 = ("Find our schools at %s" %(link))
+        speech1 = ("I'm sorry, I do not know about that. ")
+        link = data['query']['link']
+        speech2 = ("You could find out at %s" %(link))
         speech = speech1 + speech2
         print(speech)
         return {
@@ -689,16 +683,16 @@ def admissionQuery(req):
             "openUrlAction": {
             "url": link
             },
-            "title": "Find our schools here."
+            "title": "VITEEE"
             }
             ],
             "image": {
-            "url": "http://vit.ac.in/images/schools/vitschoolimage.jpg",
-            "accessibilityText": "Schools at VIT"
+            "url": image,
+            "accessibilityText": "VITEEE"
             },
             "formattedText": speech1,
             "platform": "google",
-            "title": "School not found",
+            "title": "VITEEE",
             "type": "basic_card"
             }
             ] 
@@ -712,7 +706,7 @@ def default():
         "source": "Institution-Chat-Bot"
         }
 
-
+eifjccgievehec
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 80))
     print ("Starting on port %d" % port)
