@@ -564,7 +564,7 @@ def findLeader(req):
             },
             "formattedText": speech1,
             "platform": "google",
-            "subtitle": position
+            "subtitle": position,
             "title": name,
             "type": "basic_card"
             }
