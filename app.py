@@ -523,7 +523,7 @@ def findLeader(req):
     parameters = result.get("parameters")
     print(parameters)
     role = parameters.get("roles")
-    print(roles)
+    print(role)
     data = json.load(open('data.json'))
     flag = "false"
     if data['organization'].get(role) is not None:
