@@ -39,6 +39,7 @@ def webhook():
   
 def makeWebhookResult(req):
     action = req.get("result").get("action")
+    context = req.get("result").get("context")
     print(action)
     if action == "findBranchLink":
         result = findBranchLink(req)
@@ -54,6 +55,8 @@ def makeWebhookResult(req):
         result = admissionQuery(req)
     elif action == "findLeader":
         result = findLeader(req)
+    elif context[0]['name'] =="dean":
+        result = findDean(req)
     else:
         result = default()
     print(result)
