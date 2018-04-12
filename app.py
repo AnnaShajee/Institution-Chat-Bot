@@ -706,7 +706,6 @@ def default():
         "source": "Institution-Chat-Bot"
         }
 
-eifjccgievehec
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 80))
     print ("Starting on port %d" % port)
