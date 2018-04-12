@@ -530,12 +530,18 @@ def findLeader(req):
         flag = "true"
     print(flag)
     link = data['organization']['link']
+    print(link)
     if flag == "true":
         name = data['organization'][role]['name']
+        print(name)
         image = data['organization'][role]['image']
+        print(image)
         position = data['organization'][role]['role']
+        print(position)
         speech1 = ("The %s is %s. " %(position, name))
+        print(speech1)
         speech2 = ("Read more about %s at %s. " %(name, link))
+        print(speech2)
         speech = speech1 + speech2
         print (speech)
         return {
